@@ -73,6 +73,8 @@ holdButton.addEventListener('click', function () {
     holdButton.classList.add('hidden');
     rollButton.classList.add('hidden');
     player1Message.textContent = 'THE WINNER';
+    player1.classList.add('player--winner');
+    diceImage.classList.add('hidden');
   }
   //Player 1 Presses Hold
   else if (
@@ -93,6 +95,8 @@ holdButton.addEventListener('click', function () {
     holdButton.classList.add('hidden');
     rollButton.classList.add('hidden');
     player2Message.textContent = 'THE WINNER';
+    player2.classList.add('player--winner');
+    diceImage.classList.add('hidden');
   }
   //Player 2 presses Hold
   else {
@@ -106,20 +110,23 @@ holdButton.addEventListener('click', function () {
 
 //Pressing button new game
 document.getElementById('new').addEventListener('click', function () {
-  console.log('button NEw pressed');
+  console.log('button New pressed');
   diceImage.classList.add('hidden');
   scorePlayer1 = 0;
   scorePlayer2 = 0;
   totalScorePlayer1 = 0;
   totalScorePlayer2 = 0;
   currentScorePlayer1.textContent = 0;
+  currentScorePlayer2.textContent = 0;
   document.getElementById('score--1').textContent = 0;
   document.getElementById('score--0').textContent = 0;
-  currentScorePlayer2.textContent = 0;
+
   player1.classList.add('player--active');
   player2.classList.remove('player--active');
   holdButton.classList.remove('hidden');
   rollButton.classList.remove('hidden');
   player1Message.textContent = 'PLAYER 1';
   player2Message.textContent = 'PLAYER 2';
+  player1.classList.remove('player--winner');
+  player2.classList.remove('player--winner');
 });
